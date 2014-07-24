@@ -42,9 +42,9 @@ public class HtmlRequestTest {
 		}
 		
 		
-		HtmlRequest<News> request = new HtmlRequest<News>(url, News.class,listener);
-		NetworkResponse networkResponse = new NetworkResponse(sb.toString().getBytes());
-		request.parseNetworkResponse(networkResponse);
+//		HtmlRequestBakBak<News> request = nHtmlRequestBakestBak<News>(url, News.class,listener);
+//		NetworkResponse networkResponse = new NetworkResponse(sb.toString().getBytes());
+//		request.parseNetworkResponse(networkResponse);
 		
 		// When
 //		Response<News> response = request.parseNetworkResponse(networkResponse);
