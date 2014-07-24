@@ -64,8 +64,12 @@ public class SimpleXmlRequestTest {
 		 "</news>";
 		SimpleXmlRequest<News> request = new SimpleXmlRequest<News>(url, News.class,listener);
 		NetworkResponse networkResponse = new NetworkResponse(content.getBytes());
+		System.out.println("networkResponse=" + networkResponse);
+		
 		// When
 		Response<News> response = request.parseNetworkResponse(networkResponse);
+		System.out.println("response=" + response);
+		
 		// Then
 		News news = response.result;
 		assertThat(news.imageUrl, is("http://static.naver.com/volley-ext.jpg"));

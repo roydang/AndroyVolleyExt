@@ -141,8 +141,7 @@ public class JacksonRequest<T> extends AbstractConverterRequest<T> {
 	@Override
 	protected Response<T> parseNetworkResponse(NetworkResponse response) {
 		try {
-			T result = objectMapper.readValue(getBodyString(response),
-					getTargetClass());
+			T result = objectMapper.readValue(getBodyString(response), getTargetClass());
 			return Response.success(result,
 					HttpHeaderParser.parseCacheHeaders(response));
 		} catch (JsonParseException e) {

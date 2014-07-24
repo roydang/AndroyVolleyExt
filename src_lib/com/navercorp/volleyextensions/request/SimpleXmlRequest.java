@@ -146,8 +146,8 @@ public class SimpleXmlRequest<T> extends AbstractConverterRequest<T> {
 		try {
 			reader = new InputStreamReader(new ByteArrayInputStream(response.data), charset);
 			T result = persister.read(getTargetClass(),	reader);
-			return Response.success(result,
-					HttpHeaderParser.parseCacheHeaders(response));
+			return Response.success(result, HttpHeaderParser.parseCacheHeaders(response));
+			
 		} catch (UnsupportedEncodingException e) {
 			return Response.error(new ParseError(e));
 		} catch (XmlPullParserException e) {
