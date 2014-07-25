@@ -56,14 +56,12 @@ public abstract class AndroyApplication extends Application {
 		
 		backgroundHandler = new Handler(backgroundHandlerThread.getLooper());
 	}
-	public static AndroyApplication getApplication() {
-		return _internalInstance;
-	}
+	
 	public static Handler getUiHandler() {
-		return getApplication().uiHandler;
+		return _internalInstance.uiHandler;
 	}
 	public static Handler getBackgroundHandler() {
-		return getApplication().backgroundHandler;
+		return _internalInstance.backgroundHandler;
 	}	
 
 	public void addWorker(Runnable runnable) {
